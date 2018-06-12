@@ -13,5 +13,7 @@ class TestShopCart  extends Specification  {
   " No-Offer Price - 3 apples and 3 oranges should cost 2.55" in {
     ShopCart.checkoutWithoutOffer(Array("apple", "apple", "apple", "orange", "orange", "orange")) must be equalTo 2.55
   }
-
+  "Offer-Price - 3 apples and 3 oranges should cost 1.7" in {
+    ShopCart.checkoutWithOffers(Array("apple", "apple", "apple", "orange", "orange", "orange")) must be equalTo 1.7
+  }
 }

@@ -31,6 +31,12 @@ Retrieve price of item from priceList
     val total = items.flatMap(price).sum
     BigDecimal(total).toDouble
   }
+  def checkoutWithOffers(items: Array[String]): Double = {
+    val noOfApples: Int = items.count(p => p.equalsIgnoreCase("apple"))
+    val noOfOranges: Int = items.count(p => p.equalsIgnoreCase("orange"))
 
+    val total = CalculatePrice.calculatePrice("apple")(noOfApples)  + CalculatePrice.calculatePrice("orange")(noOfOranges)
+    BigDecimal(total).toDouble
+  }
 }
 
